@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201111212217_migracion.cs" />
+    <Compile Remove="Migrations\20201111212217_migracion.Designer.cs" />
+    <Compile Remove="Migrations\20201111214038_migracionCuatro.cs" />
+    <Compile Remove="Migrations\20201111214038_migracionCuatro.Designer.cs" />
+    <Compile Remove="Migrations\20201111214503_migracionSeis.cs" />
+    <Compile Remove="Migrations\20201111214503_migracionSeis.Designer.cs" />
+    <Compile Remove="Migrations\20201111214544_migracionSeis.cs" />
+    <Compile Remove="Migrations\20201111214544_migracionSeis.Designer.cs" />
+    <Compile Remove="Migrations\20201111214832_migracionsiete.cs" />
+    <Compile Remove="Migrations\20201111214832_migracionsiete.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Controllers\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\imagenes\images.jpg" />
+    <None Include="wwwroot\imagenes\logo.PNG" />
+    <None Include="wwwroot\imagenes\VehiculoDos.jpg" />
+    <None Include="wwwroot\imagenes\VehiculoTres.jpg" />
+    <None Include="wwwroot\imagenes\VehiculoUno.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+</Project>

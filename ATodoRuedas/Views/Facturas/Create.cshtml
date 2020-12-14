@@ -1,0 +1,62 @@
+﻿@model ATodoRuedas.Models.Factura
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Generar Factura</h1>
+
+<h4>Factura</h4>
+<hr />
+
+<div class="col-md-4">
+    <form asp-controller="Facturas" asp-action="Index" method="post" role="form">
+        <div class="form-group">
+            <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+           
+        </div>
+      
+    </form>
+</div> 
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="tipoFactura"></label>
+                <select asp-for="tipoFactura" asp-items="@Html.GetEnumSelectList<EnumFactura>()"></select>
+                <span asp-validation-for="tipoFactura" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="importe" class="control-label"></label>
+                <input asp-for="importe" class="form-control" value="0"/>
+                <span asp-validation-for="importe" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <select asp-for="ClienteId"
+                        class="form-control"
+                        asp-items="@(new SelectList(ViewBag.Listofproducts,"Value", "Text")).Reverse()">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
